@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+    name: dev
+  datasource:
+    url: ${DB_URL}
+    username: ${USER}
+    password: ${PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        format_sql: true
+    show-sql: false
+    open-in-view: true
+    hibernate:
+      ddl-auto: create
+    generate-ddl: true
+  sql:
+    init:
+      mode: always
+  jackson:
+    mapper:
+      default-view-inclusion: true
+logging:
+  level:
+    sql: info
+    web: info
+    org.springframework.security: info
+app:
+  secret: ${random.value}

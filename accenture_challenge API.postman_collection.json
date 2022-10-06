@@ -1,0 +1,1188 @@
+{
+	"info": {
+		"_postman_id": "673d8a97-4c1e-43ab-8e08-0c1e93c125d7",
+		"name": "accenture_challenge API",
+		"description": "accenture_challenge API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21783780"
+	},
+	"item": [
+		{
+			"name": "photos",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "GET photos/{id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/photos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"photos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "90775596",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/photos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"photos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<object>"
+								}
+							]
+						},
+						{
+							"name": "PUT photos/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/photos/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"photos",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "90775596",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"<object>\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/photos/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"photos",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<object>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "POST photos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/photos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"<object>\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/photos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"photos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<object>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "GET user/{id}/albums",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user/1/albums",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"1",
+										"albums"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/user/:id/albums",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":id",
+												"albums"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<object>"
+								}
+							]
+						},
+						{
+							"name": "GET user/{id}/photos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/user/1/photos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"1",
+										"photos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/user/:id/photos",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"user",
+												":id",
+												"photos"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<object>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user?page=0&order=asc",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"content\": [\r\n        {\r\n            \"username\": \"Bret\",\r\n            \"id\": 1,\r\n            \"name\": \"Leanne Graham\",\r\n            \"email\": \"Sincere@april.biz\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 1,\r\n                \"street\": \"Kulas Light\",\r\n                \"suite\": \"Apt. 556\",\r\n                \"city\": \"Gwenborough\",\r\n                \"zipcode\": \"92998-3874\",\r\n                \"geo\": {\r\n                    \"id\": 1,\r\n                    \"lat\": \"-37.3159\",\r\n                    \"lng\": \"81.1496\"\r\n                }\r\n            },\r\n            \"phone\": \"1-770-736-8031 x56442\",\r\n            \"website\": \"hildegard.org\",\r\n            \"company\": {\r\n                \"id\": 1,\r\n                \"name\": \"Romaguera-Crona\",\r\n                \"catchPhrase\": \"Multi-layered client-server neural-net\",\r\n                \"bs\": \"harness real-time e-markets\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Antonette\",\r\n            \"id\": 2,\r\n            \"name\": \"Ervin Howell\",\r\n            \"email\": \"Shanna@melissa.tv\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 2,\r\n                \"street\": \"Victor Plains\",\r\n                \"suite\": \"Suite 879\",\r\n                \"city\": \"Wisokyburgh\",\r\n                \"zipcode\": \"90566-7771\",\r\n                \"geo\": {\r\n                    \"id\": 2,\r\n                    \"lat\": \"-43.9509\",\r\n                    \"lng\": \"-34.4618\"\r\n                }\r\n            },\r\n            \"phone\": \"010-692-6593 x09125\",\r\n            \"website\": \"anastasia.net\",\r\n            \"company\": {\r\n                \"id\": 2,\r\n                \"name\": \"Deckow-Crist\",\r\n                \"catchPhrase\": \"Proactive didactic contingency\",\r\n                \"bs\": \"synergize scalable supply-chains\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Samantha\",\r\n            \"id\": 3,\r\n            \"name\": \"Clementine Bauch\",\r\n            \"email\": \"Nathan@yesenia.net\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 3,\r\n                \"street\": \"Douglas Extension\",\r\n                \"suite\": \"Suite 847\",\r\n                \"city\": \"McKenziehaven\",\r\n                \"zipcode\": \"59590-4157\",\r\n                \"geo\": {\r\n                    \"id\": 3,\r\n                    \"lat\": \"-68.6102\",\r\n                    \"lng\": \"-47.0653\"\r\n                }\r\n            },\r\n            \"phone\": \"1-463-123-4447\",\r\n            \"website\": \"ramiro.info\",\r\n            \"company\": {\r\n                \"id\": 3,\r\n                \"name\": \"Romaguera-Jacobson\",\r\n                \"catchPhrase\": \"Face to face bifurcated interface\",\r\n                \"bs\": \"e-enable strategic applications\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Karianne\",\r\n            \"id\": 4,\r\n            \"name\": \"Patricia Lebsack\",\r\n            \"email\": \"Julianne.OConner@kory.org\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 4,\r\n                \"street\": \"Hoeger Mall\",\r\n                \"suite\": \"Apt. 692\",\r\n                \"city\": \"South Elvis\",\r\n                \"zipcode\": \"53919-4257\",\r\n                \"geo\": {\r\n                    \"id\": 4,\r\n                    \"lat\": \"29.4572\",\r\n                    \"lng\": \"-164.2990\"\r\n                }\r\n            },\r\n            \"phone\": \"493-170-9623 x156\",\r\n            \"website\": \"kale.biz\",\r\n            \"company\": {\r\n                \"id\": 4,\r\n                \"name\": \"Robel-Corkery\",\r\n                \"catchPhrase\": \"Multi-tiered zero tolerance productivity\",\r\n                \"bs\": \"transition cutting-edge web services\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Kamren\",\r\n            \"id\": 5,\r\n            \"name\": \"Chelsey Dietrich\",\r\n            \"email\": \"Lucio_Hettinger@annie.ca\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 5,\r\n                \"street\": \"Skiles Walks\",\r\n                \"suite\": \"Suite 351\",\r\n                \"city\": \"Roscoeview\",\r\n                \"zipcode\": \"33263\",\r\n                \"geo\": {\r\n                    \"id\": 5,\r\n                    \"lat\": \"-31.8129\",\r\n                    \"lng\": \"62.5342\"\r\n                }\r\n            },\r\n            \"phone\": \"(254)954-1289\",\r\n            \"website\": \"demarco.info\",\r\n            \"company\": {\r\n                \"id\": 5,\r\n                \"name\": \"Keebler LLC\",\r\n                \"catchPhrase\": \"User-centric fault-tolerant solution\",\r\n                \"bs\": \"revolutionize end-to-end systems\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Leopoldo_Corkery\",\r\n            \"id\": 6,\r\n            \"name\": \"Mrs. Dennis Schulist\",\r\n            \"email\": \"Karley_Dach@jasper.info\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 6,\r\n                \"street\": \"Norberto Crossing\",\r\n                \"suite\": \"Apt. 950\",\r\n                \"city\": \"South Christy\",\r\n                \"zipcode\": \"23505-1337\",\r\n                \"geo\": {\r\n                    \"id\": 6,\r\n                    \"lat\": \"-71.4197\",\r\n                    \"lng\": \"71.7478\"\r\n                }\r\n            },\r\n            \"phone\": \"1-477-935-8478 x6430\",\r\n            \"website\": \"ola.org\",\r\n            \"company\": {\r\n                \"id\": 6,\r\n                \"name\": \"Considine-Lockman\",\r\n                \"catchPhrase\": \"Synchronised bottom-line interface\",\r\n                \"bs\": \"e-enable innovative applications\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Elwyn.Skiles\",\r\n            \"id\": 7,\r\n            \"name\": \"Kurtis Weissnat\",\r\n            \"email\": \"Telly.Hoeger@billy.biz\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 7,\r\n                \"street\": \"Rex Trail\",\r\n                \"suite\": \"Suite 280\",\r\n                \"city\": \"Howemouth\",\r\n                \"zipcode\": \"58804-1099\",\r\n                \"geo\": {\r\n                    \"id\": 7,\r\n                    \"lat\": \"24.8918\",\r\n                    \"lng\": \"21.8984\"\r\n                }\r\n            },\r\n            \"phone\": \"210.067.6132\",\r\n            \"website\": \"elvis.io\",\r\n            \"company\": {\r\n                \"id\": 7,\r\n                \"name\": \"Johns Group\",\r\n                \"catchPhrase\": \"Configurable multimedia task-force\",\r\n                \"bs\": \"generate enterprise e-tailers\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Maxime_Nienow\",\r\n            \"id\": 8,\r\n            \"name\": \"Nicholas Runolfsdottir V\",\r\n            \"email\": \"Sherwood@rosamond.me\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 8,\r\n                \"street\": \"Ellsworth Summit\",\r\n                \"suite\": \"Suite 729\",\r\n                \"city\": \"Aliyaview\",\r\n                \"zipcode\": \"45169\",\r\n                \"geo\": {\r\n                    \"id\": 8,\r\n                    \"lat\": \"-14.3990\",\r\n                    \"lng\": \"-120.7677\"\r\n                }\r\n            },\r\n            \"phone\": \"586.493.6943 x140\",\r\n            \"website\": \"jacynthe.com\",\r\n            \"company\": {\r\n                \"id\": 8,\r\n                \"name\": \"Abernathy Group\",\r\n                \"catchPhrase\": \"Implemented secondary concept\",\r\n                \"bs\": \"e-enable extensible e-tailers\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Delphine\",\r\n            \"id\": 9,\r\n            \"name\": \"Glenna Reichert\",\r\n            \"email\": \"Chaim_McDermott@dana.io\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 9,\r\n                \"street\": \"Dayna Park\",\r\n                \"suite\": \"Suite 449\",\r\n                \"city\": \"Bartholomebury\",\r\n                \"zipcode\": \"76495-3109\",\r\n                \"geo\": {\r\n                    \"id\": 9,\r\n                    \"lat\": \"24.6463\",\r\n                    \"lng\": \"-168.8889\"\r\n                }\r\n            },\r\n            \"phone\": \"(775)976-6794 x41206\",\r\n            \"website\": \"conrad.com\",\r\n            \"company\": {\r\n                \"id\": 9,\r\n                \"name\": \"Yost and Sons\",\r\n                \"catchPhrase\": \"Switchable contextually-based project\",\r\n                \"bs\": \"aggregate real-time technologies\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        },\r\n        {\r\n            \"username\": \"Moriah.Stanton\",\r\n            \"id\": 10,\r\n            \"name\": \"Clementina DuBuque\",\r\n            \"email\": \"Rey.Padberg@karina.biz\",\r\n            \"password\": \"\",\r\n            \"address\": {\r\n                \"id\": 10,\r\n                \"street\": \"Kattie Turnpike\",\r\n                \"suite\": \"Suite 198\",\r\n                \"city\": \"Lebsackbury\",\r\n                \"zipcode\": \"31428-2261\",\r\n                \"geo\": {\r\n                    \"id\": 10,\r\n                    \"lat\": \"-38.2386\",\r\n                    \"lng\": \"57.2232\"\r\n                }\r\n            },\r\n            \"phone\": \"024-648-3804\",\r\n            \"website\": \"ambrose.net\",\r\n            \"company\": {\r\n                \"id\": 10,\r\n                \"name\": \"Hoeger LLC\",\r\n                \"catchPhrase\": \"Centralized empowering task-force\",\r\n                \"bs\": \"target end-to-end models\"\r\n            },\r\n            \"roles\": [],\r\n            \"albums\": [],\r\n            \"enabled\": true,\r\n            \"authorities\": [],\r\n            \"accountNonExpired\": true,\r\n            \"credentialsNonExpired\": true,\r\n            \"accountNonLocked\": true\r\n        }\r\n    ],\r\n    \"last\": true,\r\n    \"totalElements\": 10,\r\n    \"totalPages\": 1,\r\n    \"size\": 10,\r\n    \"number\": 0,\r\n    \"first\": true,\r\n    \"numberOfElements\": 10,\r\n    \"empty\": false\r\n}"
+						}
+					]
+				},
+				{
+					"name": "POST user/auth/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Bret\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"<object>\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/user/auth/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"jwt\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCcmV0IiwidbmJmIjoxNjY1MDk1ODg5LCJpc3MiOiJsb2NhbGhvc3QiLCJzY29wZXMiOiIiLCJleHAiOjE2NjUxMDY2ODl9.jnOynatN-1eGPeoE3Gh2C3rf48zaCDOYalJ-ZUGt7ShU0eK0n_5M3XDZVHSVYfvuziV3ZRSub_ceqtQcZnxI-w\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "GET user/{albumId}/{permission}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user/104/READ",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"104",
+								"READ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/user/:albumId/:permission",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"user",
+										":albumId",
+										":permission"
+									],
+									"variable": [
+										{
+											"key": "albumId",
+											"value": "90775596",
+											"description": "(Required) "
+										},
+										{
+											"key": "permission",
+											"value": "",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<object>"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "albums",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "GET albums/{id}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/albums/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"albums",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/albums/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"albums",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"title\": \"quidem molestiae enim\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Leanne Graham\",\n        \"email\": \"Sincere@april.biz\",\n        \"username\": \"Bret\",\n        \"password\": \"$2a$12$kyyacyDPjfzAZYNQcvf0YuhjAFx.LxJ/LlwY1S1QtJ32aO1GxWwa6\",\n        \"address\": {\n            \"id\": 1,\n            \"street\": \"Kulas Light\",\n            \"suite\": \"Apt. 556\",\n            \"city\": \"Gwenborough\",\n            \"zipcode\": \"92998-3874\",\n            \"geo\": {\n                \"id\": 1,\n                \"lat\": \"-37.3159\",\n                \"lng\": \"81.1496\"\n            }\n        },\n        \"phone\": \"1-770-736-8031 x56442\",\n        \"website\": \"hildegard.org\",\n        \"company\": {\n            \"id\": 1,\n            \"name\": \"Romaguera-Crona\",\n            \"catchPhrase\": \"Multi-layered client-server neural-net\",\n            \"bs\": \"harness real-time e-markets\"\n        },\n        \"roles\": [],\n        \"albums\": [],\n        \"enabled\": true,\n        \"authorities\": [],\n        \"accountNonLocked\": true,\n        \"accountNonExpired\": true,\n        \"credentialsNonExpired\": true\n    },\n    \"permissions\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "PUT albums/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/albums/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"albums",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "90775596",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"<object>\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/albums/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"albums",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<object>"
+								}
+							]
+						},
+						{
+							"name": "PUT albums/{id}/changePermissions",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userEmail\":\"Nathan@yesenia.net\",\r\n\"permissionType\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/albums/1/changePermissions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"albums",
+										"1",
+										"changePermissions"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"<object>\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/albums/:id/changePermissions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"albums",
+												":id",
+												"changePermissions"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n\"userEmail\":\"Shanna@melissa.tv\",\r\n\"permissionType\": 2\r\n}"
+								}
+							]
+						},
+						{
+							"name": "POST albums/{id}/share",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"userEmail\":\"Nathan@yesenia.net\",\r\n\"permissionType\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/albums/:id/share",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"albums",
+										":id",
+										"share"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "\"<object>\"",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/albums/:id/share",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"albums",
+												":id",
+												"share"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "90775596",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\r\n\"userEmail\":\"Nathan@yesenia.net\",\r\n\"permissionType\": 2\r\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET albums",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/albums",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"albums"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "asc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/albums?page=0&order=asc",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"albums"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"content\": [\r\n        {\r\n            \"id\": 1,\r\n            \"title\": \"quidem molestiae enim\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"title\": \"sunt qui excepturi placeat culpa\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"title\": \"omnis laborum odio\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"title\": \"non esse culpa molestiae omnis sed optio\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"title\": \"eaque aut omnis a\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"title\": \"natus impedit quibusdam illo est\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"title\": \"quibusdam autem aliquid et et quia\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"title\": \"qui fuga est a eum\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 9,\r\n            \"title\": \"saepe unde necessitatibus rem\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"title\": \"distinctio laborum qui\",\r\n            \"user\": {\r\n                \"username\": \"Bret\",\r\n                \"id\": 1,\r\n                \"name\": \"Leanne Graham\",\r\n                \"email\": \"Sincere@april.biz\",\r\n                \"password\": null,\r\n                \"address\": null,\r\n                \"phone\": null,\r\n                \"website\": null,\r\n                \"company\": null,\r\n                \"roles\": null,\r\n                \"albums\": null,\r\n                \"enabled\": true,\r\n                \"authorities\": null,\r\n                \"accountNonLocked\": true,\r\n                \"credentialsNonExpired\": true,\r\n                \"accountNonExpired\": true\r\n            },\r\n            \"permissions\": []\r\n        }\r\n    ],\r\n    \"last\": false,\r\n    \"totalElements\": 104,\r\n    \"totalPages\": 11,\r\n    \"size\": 10,\r\n    \"number\": 0,\r\n    \"first\": true,\r\n    \"numberOfElements\": 10,\r\n    \"empty\": false\r\n}"
+						}
+					]
+				},
+				{
+					"name": "POST albums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJCcmV0IiwibmJmIjoxNjY1MDk1ODg5LCJpc3MiOiJsb2NhbGhvc3QiLCJzY29wZXMiOiIiLCJleHAiOjE2NjUxMDY2ODl9.jnOynatN-1eGPeoE3Gh2C3rf48zaCDOYalJ-ZUGt7ShU0eK0n_5M3XDZVHSVYfvuziV3ZRSub_ceqtQcZnxI-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Vacations\",\r\n    \"permissions\": [\r\n        {\r\n            \"userEmail\": \"Nathan@yesenia.net\",\r\n            \"permissionType\": 0\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/albums",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "\"<object>\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/albums",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"albums"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"title\": \"Vacations\",\r\n    \"permissions\": [\r\n        {\r\n            \"userEmail\": \"Nathan@yesenia.net\",\r\n            \"permissionType\": 0\r\n        }\r\n    ]\r\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GET comments",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/comments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"comments"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "user",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/comments?name=&user=",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"comments"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": ""
+								},
+								{
+									"key": "user",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "*/*"
+						}
+					],
+					"cookie": [],
+					"body": "<object>"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{BEARER_JWT_ACCE}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://accenture_challenge",
+			"type": "string"
+		}
+	]
+}
