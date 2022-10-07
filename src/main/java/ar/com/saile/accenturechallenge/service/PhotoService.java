@@ -6,7 +6,7 @@ public interface PhotoService {
 
     PhotoDto getById(Long id);
 
-    PhotoDto create(PhotoDto photoDto);
+    PhotoDto create(PhotoDto.Request photoDto);
 
-    PhotoDto update(Long id, PhotoDto photoDto);
+    PhotoDto update(Long id, PhotoDto.Request photoDto);
 }

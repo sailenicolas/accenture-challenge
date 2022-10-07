@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -30,11 +31,17 @@ public class SharingPermissionsDto implements Serializable {
     private AlbumDto album;
     private PermissionType permissionType;
 
+    public String getUsername() {
+
+        return user.getUsername();
+    }
+
     @AllArgsConstructor
     @NoArgsConstructor
     @Getter
     @Setter
     public static final  class Request {
+        @NotBlank
         private String userEmail;
         private PermissionType permissionType;
     }

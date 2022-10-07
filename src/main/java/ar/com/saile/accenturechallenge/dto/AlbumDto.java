@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,7 @@ public class AlbumDto implements Serializable {
     @AllArgsConstructor
     @NoArgsConstructor
     public static final class Request{
+        @NotBlank
         private String title;
         private List<SharingPermissionsDto.Request> permissions;
     }

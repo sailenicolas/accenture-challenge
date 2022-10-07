@@ -24,7 +24,7 @@ public class PhotoController {
         return ResponseEntity.ok( photoService.getById(id));
     }
     @PostMapping()
-    public ResponseEntity<?> create(@Valid @RequestBody PhotoDto photoDto, BindingResult bindingResult){
+    public ResponseEntity<?> create(@Valid @RequestBody PhotoDto.Request photoDto, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             throw new BindingResultException( bindingResult );
         return ResponseEntity.ok( photoService.create(photoDto));
@@ -32,7 +32,7 @@ public class PhotoController {
     }
     @PutMapping("{id}")
     //@PreAuthorize( "hasPermission(#id, 'photo','WRITE')" )
-    public ResponseEntity<?> update(@PathVariable Long id, @Valid @RequestBody PhotoDto photoDto, BindingResult bindingResult){
+    public ResponseEntity<?> update(@PathVariable Long id, @Valid @RequestBody PhotoDto.Request photoDto, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             throw new BindingResultException( bindingResult );
         return ResponseEntity.ok( photoService.update(id, photoDto));

@@ -11,6 +11,7 @@ import java.util.List;
 public interface CommentRepository extends JpaRepository<Comment, Long>, JpaSpecificationExecutor<Comment> {
 
 
-    List<Comment> findAllByNameLike(String name);
-    List<Comment> findAllByEmailLikeIgnoreCase(String email);
+    List<Comment> findAllByNameContainsIgnoreCase(String name);
+    List<Comment> findAllByEmailIsLikeIgnoreCase(String email);
+
 }

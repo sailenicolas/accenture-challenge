@@ -29,10 +29,10 @@ public class CommentServiceImpl implements CommentService {
     public List<CommentDto> getAllByNameOrUser(String name, String user) {
         List<Comment> comments = new ArrayList<>();
         if (!name.isBlank() && !name.isEmpty()) {
-            comments = commentRepository.findAllByNameLike(name);
+            comments = commentRepository.findAllByNameContainsIgnoreCase(name);
         }
         if (!user.isBlank() && !user.isEmpty()) {
-            comments = commentRepository.findAllByEmailLikeIgnoreCase(name);
+            comments = commentRepository.findAllByEmailIsLikeIgnoreCase(user);
         }
         return comments.stream().map( p -> modelMapper.map(p, CommentDto.class) ).toList();
     }

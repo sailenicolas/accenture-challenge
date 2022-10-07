@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -33,4 +35,25 @@ public class PhotoDto implements Serializable {
         this.album = new AlbumDto();
         this.album.setId(album);
     }
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
+    public static final class Request{
+        private Long id;
+
+        @NotBlank
+        private String title;
+
+        @NotBlank
+        private String url;
+
+        @NotBlank
+        private String thumbnailUrl;
+
+        @NotNull
+        private Long albumId;
+
+    }
+
 }
