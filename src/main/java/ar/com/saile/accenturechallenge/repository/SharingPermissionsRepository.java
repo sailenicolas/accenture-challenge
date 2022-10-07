@@ -13,5 +13,8 @@ public interface SharingPermissionsRepository extends JpaRepository<SharingPermi
 
 
     Optional<SharingPermissions> findByAlbum_IdAndUser_Email(Long album, String userId);
+    Optional<SharingPermissions> findByAlbum_IdAndUser_IdAndPermissionType(Long album, Long userId, PermissionType permissionType);
     List<SharingPermissions> findAllByAlbum_IdAndPermissionType(Long album, PermissionType userId);
+
+    Optional<SharingPermissions> findByAlbum_IdAndUser_Id(Long id, Long userId);
 }
