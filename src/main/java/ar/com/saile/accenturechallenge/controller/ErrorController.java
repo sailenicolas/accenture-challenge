@@ -22,13 +22,13 @@ public class ErrorController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(LoginFailedException.class)
     protected ResponseEntity<?> handleLoginFailed(LoginFailedException ex) {
 
-        return new ResponseEntity<>( ex.getMessage(), HttpStatus.UNAUTHORIZED );
+        return new ResponseEntity<>( List.of(ex.getMessage()), HttpStatus.UNAUTHORIZED );
     }
 
     @ExceptionHandler(UserNotAuthorized.class)
     protected ResponseEntity<?> handleAuthFail(UserNotAuthorized ex) {
 
-        return new ResponseEntity<>( ex.getMessage(), HttpStatus.UNAUTHORIZED );
+        return new ResponseEntity<>( List.of(ex.getMessage()), HttpStatus.UNAUTHORIZED );
     }
     @ExceptionHandler(RecordNotFound.class)
     protected ResponseEntity<?> handleNotFound(RecordNotFound ex) {
