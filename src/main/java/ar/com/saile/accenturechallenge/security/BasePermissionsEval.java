@@ -1,10 +1,11 @@
 package ar.com.saile.accenturechallenge.security;
 
+import ar.com.saile.accenturechallenge.domain.SharingPermissions;
 import ar.com.saile.accenturechallenge.domain.User;
 import ar.com.saile.accenturechallenge.dto.AlbumDto;
-import ar.com.saile.accenturechallenge.dto.SharingPermissionsDto;
 import ar.com.saile.accenturechallenge.enums.PermissionType;
 import ar.com.saile.accenturechallenge.exception.RecordNotFound;
+import ar.com.saile.accenturechallenge.repository.SharingPermissionsRepository;
 import ar.com.saile.accenturechallenge.repository.UserRepository;
 import ar.com.saile.accenturechallenge.service.AlbumService;
 import lombok.AllArgsConstructor;
@@ -13,8 +14,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Component
 @AllArgsConstructor
@@ -22,43 +23,48 @@ public class BasePermissionsEval implements PermissionEvaluator {
 
     private final UserRepository userService;
     private final AlbumService albumService;
+    private final SharingPermissionsRepository permissionsRepository;
     @Override
     public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {
-
+        String value = String.valueOf( permission );
+        PermissionType permissionReceived = value.equalsIgnoreCase( "READ_WRITE")
+                ? PermissionType.READ_WRITE : value.equalsIgnoreCase( "WRITE")
+                ? PermissionType.WRITE : PermissionType.READ ;
         User byUsername = userService.findByUsername( authentication.getName() ).orElseThrow(() -> new RecordNotFound( "NOT FOUND" ) );
             if (targetDomainObject instanceof AlbumDto domainObject)
             {
                 if (Objects.equals( domainObject.getUser().getId(), byUsername.getId() ))
                     return true;
-                List<SharingPermissionsDto> permissionsDtos = getPermissionsDtos( byUsername, domainObject, String.valueOf( permission ) );
-                return permissionsDtos.size() > 0;
+                Optional<SharingPermissions> permissions = permissionsRepository.gettingAlbumById(
+                        domainObject.getId(),
+                        byUsername.getId(),
+                        permissionReceived,
+                        PermissionType.READ_WRITE );
+                return permissions.isPresent();
             }
         return false;
     }
 
-    private static List<SharingPermissionsDto> getPermissionsDtos(User byUsername, AlbumDto domainObject, String permission) {
-
-        return domainObject.getPermissions().stream().distinct().filter( sharingPermissionsDto -> Objects.equals( sharingPermissionsDto.getUser().getId(), byUsername.getId() ) ).filter( p -> p.getPermissionType().name().equalsIgnoreCase( permission) || p.getPermissionType().name().equalsIgnoreCase( PermissionType.READ_WRITE.name() ) ).toList();
-    }
 
     @Override
     public boolean hasPermission(Authentication authentication, Serializable targetId, String targetType, Object permission) {
+
+        String value = String.valueOf( permission );
+        PermissionType permissionReceived = value.equalsIgnoreCase( "READ_WRITE")
+                ? PermissionType.READ_WRITE : value.equalsIgnoreCase( "WRITE")
+                ? PermissionType.WRITE : PermissionType.READ ;
         User byUsername = userService.findByUsername( authentication.getName() ).orElseThrow(() -> new RecordNotFound( "NOT FOUND" ) );
             if (targetType.equalsIgnoreCase( "album" ) || targetType.equalsIgnoreCase( "shareAlbum" )) {
                 AlbumDto albumDto = albumService.getById( (Long) targetId );
-                boolean aCase = byUsername.getUsername().equalsIgnoreCase( albumDto.getUser().getUsername() );
-                List<SharingPermissionsDto> permissionsDtos = albumDto.getPermissions().stream().
-                        filter( p -> {
-                            String value = String.valueOf( permission );
-                            boolean aCase1 = p.getPermissionType().name().equalsIgnoreCase( PermissionType.READ_WRITE.name() );
-                            boolean equalsUser = Objects.equals( p.getUser().getId(), byUsername.getId() );
-                            boolean aCase2 = p.getPermissionType().name().equalsIgnoreCase( value );
-                            return (aCase1 || aCase2) && equalsUser;
-                                }
-                        )
-                        .toList();
-                boolean b = permissionsDtos.size() > 0;
-                return (aCase || b);
+                if(byUsername.getUsername().equalsIgnoreCase( albumDto.getUser().getUsername() ))
+                    return true;
+
+                Optional<SharingPermissions> sharingPermissions = permissionsRepository.findDistinctByUser_IdIsAndAlbum_IdIsAndPermissionTypeIsOrPermissionTypeIs(
+                        (Long) targetId,
+                        byUsername.getId(),
+                        permissionReceived,
+                        PermissionType.READ_WRITE );
+                return sharingPermissions.isPresent();
             } else if (targetType.equalsIgnoreCase( "changePermissions" )) {
                 AlbumDto albumDto = albumService.getById( (Long) targetId );
                 return byUsername.getUsername().equalsIgnoreCase( albumDto.getUser().getUsername());

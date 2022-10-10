@@ -9,10 +9,14 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "SharingPermissions.findDistinctByUser_IdIsAndAlbum_IdIsAndPermissionTypeIsOrPermissionTypeIs", query = "select distinct s from SharingPermissions s where  s.album.id = :id and s.user.id = :userid and (s.permissionType = :perms2 or s.permissionType = :perms)")
+})
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+
 public class SharingPermissions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +34,19 @@ public class SharingPermissions {
 
     @ManyToOne
     private Album album;
+
+    @Enumerated
     private PermissionType permissionType;
 
+    @Override
+    public String toString() {
+
+        final StringBuilder sb = new StringBuilder( "SharingPermissions{" );
+        sb.append( "id=" ).append( id );
+        sb.append( ", user=" ).append( user );
+        sb.append( ", album=" ).append( album );
+        sb.append( ", permissionType=" ).append( permissionType );
+        sb.append( '}' );
+        return sb.toString();
+    }
 }

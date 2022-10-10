@@ -3,6 +3,7 @@ package ar.com.saile.accenturechallenge.controller;
 import ar.com.saile.accenturechallenge.exception.BindingResultException;
 import ar.com.saile.accenturechallenge.exception.LoginFailedException;
 import ar.com.saile.accenturechallenge.exception.RecordNotFound;
+import ar.com.saile.accenturechallenge.exception.UserNotAuthorized;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,7 +22,13 @@ public class ErrorController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(LoginFailedException.class)
     protected ResponseEntity<?> handleLoginFailed(LoginFailedException ex) {
 
-        return new ResponseEntity<>( ex.getMessage(), HttpStatus.UNAUTHORIZED );
+        return new ResponseEntity<>( List.of(ex.getMessage()), HttpStatus.UNAUTHORIZED );
+    }
+
+    @ExceptionHandler(UserNotAuthorized.class)
+    protected ResponseEntity<?> handleAuthFail(UserNotAuthorized ex) {
+
+        return new ResponseEntity<>( List.of(ex.getMessage()), HttpStatus.UNAUTHORIZED );
     }
     @ExceptionHandler(RecordNotFound.class)
     protected ResponseEntity<?> handleNotFound(RecordNotFound ex) {
@@ -44,8 +51,7 @@ public class ErrorController extends ResponseEntityExceptionHandler {
             return Map.<String, Object>ofEntries(
                     Map.entry( "message", defaultMessage ),
                     Map.entry( "code", code ),
-                    Map.entry( "field", vale.getField() ),
-                    Map.entry( "extra", vale.getObjectName() )
+                    Map.entry( "field", vale.getField() )
             );
         } ).collect( Collectors.toList() );
 

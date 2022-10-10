@@ -4,20 +4,31 @@ import ar.com.saile.accenturechallenge.domain.Album;
 import ar.com.saile.accenturechallenge.domain.Photo;
 import ar.com.saile.accenturechallenge.dto.AlbumDto;
 import ar.com.saile.accenturechallenge.dto.PhotoDto;
+import ar.com.saile.accenturechallenge.dto.UserDto;
+import ar.com.saile.accenturechallenge.enums.PermissionType;
 import ar.com.saile.accenturechallenge.exception.RecordNotFound;
+import ar.com.saile.accenturechallenge.exception.UserNotAuthorized;
 import ar.com.saile.accenturechallenge.repository.AlbumRepository;
 import ar.com.saile.accenturechallenge.repository.PhotoRepository;
+import ar.com.saile.accenturechallenge.repository.SharingPermissionsRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
 public class PhotoServiceImpl implements PhotoService {
 
     private final PhotoRepository photoRepository;
+    private final UserService userService;
     private final AlbumRepository albumRepository;
     private final ModelMapper modelMapper;
+
+    private final SharingPermissionsRepository sharingPermission;
+
     @Override
     public PhotoDto getById(Long id) {
 
@@ -29,13 +40,17 @@ public class PhotoServiceImpl implements PhotoService {
 
     @Override
     public PhotoDto create(PhotoDto.Request photoDto) {
+        Album album = albumRepository.findById( photoDto.getAlbumId() ).orElseThrow( () -> new RecordNotFound( "NOT FOUND Entity" ) );
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+
+        UserDto userDto = userService.getUserByUsername( username );
+        if (!Objects.equals( album.getUser().getId(), userDto.getId() ) || sharingPermission.gettingAlbumById( photoDto.getAlbumId(), userDto.getId(), PermissionType.WRITE, PermissionType.READ_WRITE).isEmpty())
+            throw new UserNotAuthorized("NOT AUTH");
+
         Photo found = new Photo();
         found.setUrl( photoDto.getUrl() );
         found.setTitle( photoDto.getTitle() );
         found.setThumbnailUrl( photoDto.getThumbnailUrl() );
-        //TODO: it should only allow albums that belong to the user. Just saying.
-        Album album = albumRepository.findById( photoDto.getAlbumId() ).orElseThrow( () -> new RecordNotFound( "NOT FOUND Entity" ) );
-        album.setId( photoDto.getId() );
         found.setAlbum( album );
         return modelMapper.map(photoRepository.save( found ), PhotoDto.class);
     }
