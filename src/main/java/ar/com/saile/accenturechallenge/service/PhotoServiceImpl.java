@@ -4,10 +4,13 @@ import ar.com.saile.accenturechallenge.domain.Album;
 import ar.com.saile.accenturechallenge.domain.Photo;
 import ar.com.saile.accenturechallenge.dto.AlbumDto;
 import ar.com.saile.accenturechallenge.dto.PhotoDto;
+import ar.com.saile.accenturechallenge.dto.UserDto;
+import ar.com.saile.accenturechallenge.enums.PermissionType;
 import ar.com.saile.accenturechallenge.exception.RecordNotFound;
 import ar.com.saile.accenturechallenge.exception.UserNotAuthorized;
 import ar.com.saile.accenturechallenge.repository.AlbumRepository;
 import ar.com.saile.accenturechallenge.repository.PhotoRepository;
+import ar.com.saile.accenturechallenge.repository.SharingPermissionsRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +26,9 @@ public class PhotoServiceImpl implements PhotoService {
     private final UserService userService;
     private final AlbumRepository albumRepository;
     private final ModelMapper modelMapper;
+
+    private final SharingPermissionsRepository sharingPermission;
+
     @Override
     public PhotoDto getById(Long id) {
 
@@ -37,7 +43,8 @@ public class PhotoServiceImpl implements PhotoService {
         Album album = albumRepository.findById( photoDto.getAlbumId() ).orElseThrow( () -> new RecordNotFound( "NOT FOUND Entity" ) );
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
 
-        if (!Objects.equals( album.getUser().getId(), userService.getUserByUsername( username ).getId() ))
+        UserDto userDto = userService.getUserByUsername( username );
+        if (!Objects.equals( album.getUser().getId(), userDto.getId() ) || sharingPermission.gettingAlbumById( photoDto.getAlbumId(), userDto.getId(), PermissionType.WRITE, PermissionType.READ_WRITE).isEmpty())
             throw new UserNotAuthorized("NOT AUTH");
 
         Photo found = new Photo();
