@@ -51,8 +51,7 @@ public class ErrorController extends ResponseEntityExceptionHandler {
             return Map.<String, Object>ofEntries(
                     Map.entry( "message", defaultMessage ),
                     Map.entry( "code", code ),
-                    Map.entry( "field", vale.getField() ),
-                    Map.entry( "extra", vale.getObjectName() )
+                    Map.entry( "field", vale.getField() )
             );
         } ).collect( Collectors.toList() );
 
