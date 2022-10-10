@@ -3,6 +3,7 @@ package ar.com.saile.accenturechallenge.controller;
 import ar.com.saile.accenturechallenge.exception.BindingResultException;
 import ar.com.saile.accenturechallenge.exception.LoginFailedException;
 import ar.com.saile.accenturechallenge.exception.RecordNotFound;
+import ar.com.saile.accenturechallenge.exception.UserNotAuthorized;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -20,6 +21,12 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 public class ErrorController extends ResponseEntityExceptionHandler {
     @ExceptionHandler(LoginFailedException.class)
     protected ResponseEntity<?> handleLoginFailed(LoginFailedException ex) {
+
+        return new ResponseEntity<>( ex.getMessage(), HttpStatus.UNAUTHORIZED );
+    }
+
+    @ExceptionHandler(UserNotAuthorized.class)
+    protected ResponseEntity<?> handleAuthFail(UserNotAuthorized ex) {
 
         return new ResponseEntity<>( ex.getMessage(), HttpStatus.UNAUTHORIZED );
     }

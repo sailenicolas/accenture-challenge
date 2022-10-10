@@ -19,6 +19,7 @@ public interface UserService extends UserDetailsService {
     ResponseEntity<?> login(UserDto.Login appUser, HttpServletRequest request) throws LoginFailedException;
 
     List<PhotoDto> getPhotosByUserId(Long id);
+    UserDto getUserByUsername(String username);
 
     List<AlbumDto> getAlbumsByUserId(Long id);
 

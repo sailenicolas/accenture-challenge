@@ -107,6 +107,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserDto getUserByUsername(String username) {
+
+        return modelMapper.map( userRepository.findByUsername( username ).orElseThrow(() -> new RecordNotFound( "NOT FOUND" )), UserDto.class );
+    }
+
+    @Override
     public List<AlbumDto> getAlbumsByUserId(Long id) {
         User found = userRepository.findById( id ).orElseThrow( () -> new RecordNotFound( "USER NOT FOUND" ) );
         return found.getAlbums().stream().map( p -> modelMapper.map( p, AlbumDto.class ) ).toList();
